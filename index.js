@@ -30,10 +30,18 @@ client.on('messageCreate', msg => {
     console.log('123')
     let users = []
     let currentNum = ""
+    let collectTime = false
+
+
+const thread = msg.channel.threads.create({
+	name: 'Игра',
+	autoArchiveDuration: '60',
+});
+
 
       client.on('messageCreate', msg1 => {
           console.log('looll')
-          if (msg1.content.toLowerCase() == '/join1' && users.indexOf(msg.author.id) == -1)
+          if (msg1.content.toLowerCase() == '/join1' && users.indexOf(msg.author.id) == -1 && collectTime == true)
           {
             users[users.length] = msg1.author.id
             console.log(users)
