@@ -2,8 +2,6 @@ const express = require('express')
 const app = express();
 const port = 3000;
 const fs = require("fs");
-const axios = require("axios");
-const sharp = require("sharp");
 const talkedRecently = new Set();
 app.get('/', function(request, response) { response.send(`Монитор активен. Локальный адрес: http://localhost:${port}`); });
 app.listen(port, () => console.log());
@@ -23,3 +21,28 @@ let client; {
      allowedMentions: ['repliedUser'],
   })
 }
+
+
+
+client.on('messageCreate', msg => {
+console.log('123')
+  if (msg.content.toLowerCase() == '/wordcraft' && msg.author.id == '544902183007813652')
+  {
+    console.log('123')
+    let users = ['']
+    let currentNum = ""
+
+      client.on('messageCreate', msg1 => {
+          console.log('looll')
+          if (msg1.content.toLowerCase() == '/join1')
+          {
+            users[length] == msg1.author.id
+            console.log(users)
+          }
+        });
+      }
+
+});
+
+
+client.login(process.env.DISCORD_TOKEN);

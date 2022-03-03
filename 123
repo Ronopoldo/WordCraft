@@ -1,0 +1,7 @@
+          console.log('looll')
+          if (message.content.toLowerCase() == '/join1')
+          {
+            users[length] == message.author.id
+            console.log(users)
+          }
+        });
