@@ -22,21 +22,20 @@ let client; {
   })
 }
 
-
+    
 
 client.on('messageCreate', msg => {
-console.log('123')
   if (msg.content.toLowerCase() == '/wordcraft' && msg.author.id == '544902183007813652')
   {
     console.log('123')
-    let users = ['']
+    let users = []
     let currentNum = ""
 
       client.on('messageCreate', msg1 => {
           console.log('looll')
-          if (msg1.content.toLowerCase() == '/join1')
+          if (msg1.content.toLowerCase() == '/join1' && users.indexOf(msg.author.id) == -1)
           {
-            users[length] == msg1.author.id
+            users[users.length] = msg1.author.id
             console.log(users)
           }
         });
